@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+if [[ "$1" == "plan" && "$2" == "-summary" ]]; then
+  terraform plan -out=planfile
+  terraform show -no-color -json planfile | jq -r '.resource_changes[] | select(.change.actions[0]=="create") | .address' | sed 's/.*/\x1b[32m&\x1b[0m/' # Green
+  terraform show -no-color -json planfile | jq -r '.resource_changes[] | select(.change.actions[0]=="update") | .address' | sed 's/.*/\x1b[32m&\x1b[0m/' # Yellow
+  terraform show -no-color -json planfile | jq -r '.resource_changes[] | select(.change.actions[0]=="delete") | .address' | sed 's/.*/\x1b[31m&\x1b[0m/' # Red
+  exit 0
+fi
+
+terraform "$@"
