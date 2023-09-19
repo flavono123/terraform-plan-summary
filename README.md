@@ -2,7 +2,7 @@
 
 ![demo](assets/demo.gif)
 
-*A script for `terraform plan` shows resource names.*
+*Summarize resource addresses from a `terraform plan` result*
 
 ## Prerequisites
 
