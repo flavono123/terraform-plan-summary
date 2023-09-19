@@ -19,7 +19,7 @@ brew install terraform jq
 ## Install
 
 ```sh
-wget -qO $HOME/.terraform.d/terraform-plan-summary https://raw.githubusercontent.com/flavono123/terraform-plan-summary/main/terraform-plan-summary && \
+wget -qO- https://github.com/flavono123/terraform-plan-summary/releases/download/v0.1.0/terraform-plan-summary && \
   chmod +x $HOME/.terraform.d/terraform-plan-summary && \
   echo "alias terraform='$HOME/.terraform.d/terraform-plan-summary'" >> $HOME/.bashrc && \
   source $HOME/.bashrc
