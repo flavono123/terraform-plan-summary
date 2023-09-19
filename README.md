@@ -1,5 +1,7 @@
 # `terraform plan -summary`
 
+![demo](assets/demo.gif)
+
 *A script for `terraform plan` shows resource names.*
 
 ## Prerequisites
